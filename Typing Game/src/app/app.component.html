@@ -1,0 +1,63 @@
+<style>
+  body {
+    background-color: aqua;
+  }
+</style>
+<div class="container mt-5">
+  <div class="card text-center">
+    <div class="card-header">Exercice</div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>Write This text as Fast as poosible</p>
+        <footer class="blockquote-footer mt-2">
+          <span
+            *ngFor="let c of text.split(''); index as i"
+            [ngClass]="{
+              false: charArray[i] === -1,
+              true: charArray[i] === 1,
+              'not-touched': charArray[i] === 0
+            }"
+            >{{ c }}</span
+          >
+        </footer>
+      </blockquote>
+      <mat-form-field
+        appearance="legacy"
+        floatLabel="always"
+        color="accent"
+        class="warn m-2"
+      >
+        <div class="text-center">
+          <label class="my-2 mx-auto fs-5 text-secondry text-center"
+            >Enter the word</label
+          >
+          <input matInput (input)="onInput($event)" />
+        </div>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="accent"
+        class="d-block mx-auto my-2"
+        (click)="start()"
+      >
+        Start
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        class="d-block mx-auto"
+        (click)="restart()"
+      >
+        Restart
+      </button>
+      <h3 class="row w-50 my-3 mx-auto">
+        <div class="col">Time :</div>
+        <div class="col">{{ minutesCounter | number }}</div>
+      </h3>
+    </div>
+    <div *ngIf="entredText === text" class="card-footer">
+      <h3>Sucesss</h3>
+      <h3>finished at {{ getMinutesCount() }}</h3>
+    </div>
+  </div>
+</div>

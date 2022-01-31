@@ -1,0 +1,35 @@
+<div class="form-container">
+  <form [ngClass]="{ 'show-form': show }" (ngSubmit)="onSubmit()">
+    <div class="form-controle">
+      <label for="text">Task Name </label>
+      <input
+        type="text"
+        name="text"
+        id="text"
+        [(ngModel)]="text"
+        placeholder="Add Task"
+      />
+    </div>
+    <div class="form-controle">
+      <label for="day">Date</label>
+      <input
+        type="text"
+        name="day"
+        id="day"
+        [(ngModel)]="day"
+        placeholder="Add Date"
+      />
+    </div>
+    <div class="form-controle checkbox-form">
+      <label for="reminder">reminder</label>
+      <input
+        type="checkbox"
+        name="reminder"
+        [(ngModel)]="reminder"
+        id="reminder"
+      />
+    </div>
+
+    <button type="submit">Save Task</button> <br />
+  </form>
+</div>

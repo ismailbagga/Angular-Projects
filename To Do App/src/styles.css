@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+* {
+  font-family: "Poppins", "fira code", sans-serif;
+}
+body {
+  background-color: rgb(212, 214, 214);
+  overflow-y: scroll;
+}
+button {
+  outline: none;
+  border: none;
+  transition: all 200ms linear;
+}
+.container {
+  min-height: 250px;
+  width: 90vw;
+  max-width: 580px;
+  text-align: center;
+  border: 2px solid rgb(61, 125, 128);
+  margin: 20px auto;
+  background-color: white;
+}

@@ -1,0 +1,8 @@
+<!-- <input type="text" ngStyle="{'display': {show ? 'block' :'none' }}" /> -->
+<app-add-task (addTask)="addNewTask($event)"></app-add-task>
+<app-task-item
+  *ngFor="let task of tasks"
+  [task]="task"
+  (ontoggleReminder)="toggleReminder(task)"
+  (onDeleteTask)="onDeleteTask(task.id)"
+></app-task-item>
